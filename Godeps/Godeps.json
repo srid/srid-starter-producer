@@ -25,6 +25,11 @@
 			"Rev": "d67e0b7d1797975196499f79bcc322c08b9f218b"
 		},
 		{
+			"ImportPath": "github.com/sendgridlabs/go-kinesis",
+			"Comment": "1.0.0",
+			"Rev": "50e10d7aeb4f1a6475090daacd5dcaa75f5763a5"
+		},
+		{
 			"ImportPath": "golang.org/x/net/context",
 			"Rev": "589db58a47224e5786650dac2677b9c302bab6c2"
 		},
