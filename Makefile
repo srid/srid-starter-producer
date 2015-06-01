@@ -1,8 +1,10 @@
+PWD := $(shell pwd)
+
 all:	build run
 	@true
 
 build:
-	docker build -t srid/demo .
+	godep go build
 
 run:
-	docker run --rm -it srid/demo
+	PATH=${PWD}:${PATH} forego start

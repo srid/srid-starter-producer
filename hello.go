@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/bmizerany/lpx"
+	_ "github.com/bmizerany/lpx"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
 )

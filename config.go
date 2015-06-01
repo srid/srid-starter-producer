@@ -8,13 +8,13 @@ import (
 
 type Config struct {
 	Port     string `envconfig:"PORT"`
-	USERNAME string `envconfig:"USERNAME"`
-	PASSWORD string `envconfig:"PASSWORD"`
+	Username string `envconfig:"USERNAME"`
+	Password string `envconfig:"PASSWORD"`
 }
 
 var config Config
 
-func (c config) validate() error {
+func (c Config) validate() error {
 	if c.Port == "" {
 		return fmt.Errorf("$PORT is empty")
 	}
@@ -24,6 +24,7 @@ func (c config) validate() error {
 	if c.Password == "" {
 		return fmt.Errorf("$PASSWORD is empty")
 	}
+	return nil
 }
 
 func init() {
