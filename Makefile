@@ -8,3 +8,6 @@ build:
 
 run:
 	PATH=${PWD}:${PATH} forego start
+
+deploy:
+	git push heroku
