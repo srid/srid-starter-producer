@@ -51,6 +51,15 @@ func handleLogplexRequest(r *http.Request) error {
 		// Application name (header.Name) should be unique.
 		appToken := string(logRecord.Header.Name)
 		records = append(records, Record{partitionKey: appToken, data: json})
+		reportLogplexErrors(logRecord)
 	}
+
 	return putRecords(records)
+}
+
+func reportLogplexErrors(record drain.Record) {
+	proc := string(record.Header.Procid)
+	if proc == "logplex" || proc == "log-shuttle" {
+		log.Printf("ERROR from logplex -- %s\n", string(record.Data))
+	}
 }
